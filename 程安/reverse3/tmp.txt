@@ -1,0 +1,67 @@
+BOOL CryptAcquireContextA(
+   HCRYPTPROV *phProv,
+   LPCSTR     szContainer,
+   LPCSTR     szProvider,
+   DWORD      dwProvType,
+   DWORD      dwFlags
+)
+
+BOOL CryptCreateHash(
+    HCRYPTPROV hProv,
+    ALG_ID     Algid,
+    HCRYPTKEY  hKey,
+    DWORD      dwFlags,
+    HCRYPTHASH *phHash
+)
+
+BOOL CryptHashData(
+  HCRYPTHASH hHash,
+   const BYTE *pbData,
+   DWORD      dwDataLen,
+   DWORD      dwFlags
+)
+
+BOOL CryptDeriveKey(
+      HCRYPTPROV hProv,
+       ALG_ID     Algid,
+     HCRYPTHASH hBaseData,
+      DWORD      dwFlags,
+  HCRYPTKEY  *phKey
+)
+
+BOOL CryptDestroyHash(
+  HCRYPTHASH hHash
+)
+
+BOOL CryptEncrypt(
+     HCRYPTKEY  hKey,
+   HCRYPTHASH hHash,
+    BOOL       Final,
+     DWORD      dwFlags,
+ BYTE       *pbData,
+  DWORD      *pdwDataLen,
+     DWORD      dwBufLen
+)
+
+LSTATUS RegCreateKeyA(
+ HKEY   hKey,
+ LPCSTR lpSubKey,
+ PHKEY  phkResult
+)
+
+LSTATUS RegSetValueExA(
+        HKEY       hKey,
+	LPCSTR     lpValueName,
+       	DWORD      Reserved,
+       	DWORD      dwType,
+       	const BYTE *lpData,
+       	DWORD      cbData
+)
+
+LSTATUS RegCloseKey(
+   HKEY hKey
+)
+
+void Sleep(
+  DWORD dwMilliseconds
+)
